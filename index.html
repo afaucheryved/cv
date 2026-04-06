@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon CV</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background: #f4f4f9; }
+        .cv-card { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; margin-bottom: 5px; }
+        .subtitle { color: #7f8c8d; font-size: 1.2em; margin-bottom: 20px; }
+        .section { margin-top: 25px; border-top: 2px solid #eee; pt: 10px; }
+        
+        /* Style pour le menu de téléchargement */
+        .download-zone { margin-top: 30px; padding: 20px; background: #ebf2fa; border-radius: 5px; text-align: center; }
+        select, button { padding: 10px; font-size: 16px; border-radius: 4px; border: 1px solid #ccc; cursor: pointer; }
+        button { background: #3498db; color: white; border: none; font-weight: bold; }
+        button:hover { background: #2980b9; }
+    </style>
+</head>
+<body>
+
+<div class="cv-card">
+    <h1>TON PRÉNOM NOM</h1>
+    <p class="subtitle">Développeur Junior / Ton Métier</p>
+
+    <div class="section">
+        <h3>Expériences</h3>
+        <p><strong>Poste actuel</strong> - Entreprise (2023 - Présent)<br>
+        Description rapide de tes missions et accomplissements.</p>
+    </div>
+
+    <div class="section">
+        <h3>Formation</h3>
+        <p><strong>Ton Diplôme</strong> - Ton École (2022)</p>
+    </div>
+
+    <div class="download-zone">
+        <label for="format-select">Télécharger mon CV : </label>
+        <select id="format-select">
+            <option value="cv.pdf">Format PDF</option>
+            <option value="cv.docx">Format Word (.docx)</option>
+        </select>
+        <button onclick="downloadCV()">Télécharger</button>
+    </div>
+</div>
+
+<script>
+    function downloadCV() {
+        const selectedFile = document.getElementById('format-select').value;
+        // Crée un lien invisible pour forcer le téléchargement
+        const link = document.createElement('a');
+        link.href = selectedFile;
+        link.download = selectedFile;
+        link.click();
+    }
+</script>
+
+</body>
+</html>
